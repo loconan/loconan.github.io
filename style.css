@@ -139,7 +139,34 @@ footer {
 }
 
 img {
-  width:75%;
   padding-left:12.5%;
   padding-right:12.5%;
+  width:75%;
+}
+
+#img1, #img2{
+  display: inline-block;
+  width:20%;
+}
+
+#audioP{
+  background-color: #487ee2;
+  padding-bottom: 2em;
+}
+
+#controlPanel{
+  padding-left: 40%;
+  padding-right: 40%;
+  width: 20%;
+}
+
+#play, #stop {
+  background-color: #333;
+  color:#fff;
+  display: inline-block;
+  font-weight: bold;
+  height: 2em;
+  text-align: center;
+  vertical-align: middle;
+  width: 5em;
 }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>JS TP1 - Basics</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>En-tête</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../page1.html">HTML</a></li>
+            <li><a href="../page2.html">JS</a></li>
+            <li><a href="../page3.html">PHP</a></li>
+            <li><a href="../page4.html">Vue</a></li>
+            <li><a href="../index.html">Accueil</a></li>
+        </ul>
+
+    </nav>
+
+    <main>
+        <article>
+            <h2>TP1 - Basics</h2>
+            <h3>Invocation de script JS</h3>
+            <ul>
+                <li>Document 1: On fait appel à la fonction faireUneAlerte dans le script JS</li>
+                <li>Document 2: On fait appel à la fonction faireUneAlerte lors du chargement de la page dans la partie HTML</li>
+                <li>Document 2: On fait appel à la fonction faireUneAlerte lors du chargement de la page dans le script JS en faisant appel au DOM</li>
+            </ul>
+
+            <h3>Variables</h3>
+            <p>
+                Les variables ne sont accessibles que dans leur contexte courant ou par celui englobant le contexte courant.
+                Les variables en JS n'ont aucun typage précis: elles sont déclarées grâce au mot-clé var.
+            </p>
+
+            
+            <h3>Document Object Model</h3>
+            <p>
+                Analyse du script:
+                <ul>
+                    <li>On crée un élément "div" en plus de celui déjà présent dans la page </li>
+                    <li>On lui attribue un identifiant unique (div1)</li>
+                    <li>On change la forme et la couleur de ses bordures</li>
+                    <li>On l'affiche sur la page en l'ajoutant dans la div déjà existante</li>
+                </ul>
+            </p>
+            <p>
+                Pour sélectionner des éléments, on peut également utiliser la commande
+                <code>document.getElementByClassName(« ... »)[n°] </code>
+            </p>
+            <p>
+                Pour ajouter du texte dans cette nouvelle div, on peut utiliser la commande:
+                <code>document.getElementById("div1").textContent = "....";</code>
+            </p>
+
+            <h3>JS Objects</h3>
+            <p>
+                Pour créer des objets, on peut
+                <ul>
+                    <li>Utiliser une fonction anonyme (Point)</li>
+                    <li>Utiliser une fonction nommée (Voiture)</li>
+                    <li>Utiliser un ensemble de variables (Personne)</li>
+                </ul>
+            </p>
+            
+            <h3>Events</h3>
+            <p>
+                Une meilleure alternative pour lier une action à un évènement est de le faire dans le script JS avec:
+                <code>document.getElementById("...").addEventListener([event], [function], [false/true]);</code>
+            </p>
+            <p>
+                Des exemples d'évènements sont:
+                    <ul>
+                        <li>keydown</li>
+                        <li>keyup</li>
+                        <li>mouseup</li>
+                        <li>scroll</li>
+                        <li>click</li>
+                        <li>etc.</li>
+                    </ul>
+            </p>
+
+            <p>
+                Code JS pour afficher une image parmi deux en cliquant dessus:
+            </p>
+            <p>
+                <img id="img1" src="../content/js/img/chat.png">
+                <img id="img2" src="../content/js/img/chien.png">
+
+            <h3>Audio Player</h3>
+            <div id="audioP">
+                <div id="controlPanel">
+                    <canvas id="canvasAudio"></canvas>
+                    <button id="play">Play</button>
+                    <button id="stop">Stop</button>
+                </div>
+            </div>
+        </article>
+
+        <aside>
+            <h2>En relation</h2>
+            <ul>
+                <li><a href="https://madbats.github.io">Matthieu Rochard</a></li>                <li><a href="#"></a>relation2</li>
+                <li><a href="#"></a>relation2</li>
+                <li><a href="#"></a>relation3</li>
+                <li><a href="#"></a>relation4</li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>©Copyright ... </p>
+    </footer>
+
+    <script src="../content/js/script/JS_TP1.js"></script>
+</body>
+
+</html>
