@@ -1,4 +1,4 @@
-let worker = new Worker('./content/script/TP4_worker.js');
+var worker = new Worker('./content/script/TP4_worker.js');
 
 const canvas = document.getElementById("cvs");
 const ctx = canvas.getContext('2d');
