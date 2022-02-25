@@ -1,17 +1,16 @@
-var worker = new Worker('./content/script/TP4_worker.js');
-
 const canvas = document.getElementById("cvs");
 const ctx = canvas.getContext('2d');
 const interval = setInterval(creerPoint, 100);
 const maxRequest = 100;
 
-let nbRequest = 0;
+let finishedWorker = 0;
 
-let r = random(Math.floor(Math.random() * 255));
-let g = random(Math.floor(Math.random() * 255));
-let b = random(Math.floor(Math.random() * 255));
-
-ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+class WorkerPoint {
+    constructor() {
+        var worker = new Worker('./content/script/TP4_worker.js');
+        let nbRequest = 0;
+    }
+}
 
 function creerPoint() {
     worker.postMessage([cvs.width, cvs.height]);
