@@ -1,10 +1,4 @@
-const canvas = document.getElementById("cvs");
-const ctx = canvas.getContext('2d');
-const interval = setInterval(creerPoint, 100);
-const maxRequest = 100;
-
 let finishedWorker = 0;
-
 let tabWorker = {};
 
 class WorkerPoint {
@@ -20,6 +14,11 @@ class WorkerPoint {
 for (var i = 0; i < 10; i++) {
     tabWorker[i] = new WorkerPoint();
 }
+
+const canvas = document.getElementById("cvs");
+const ctx = canvas.getContext('2d');
+const interval = setInterval(creerPoint, 100);
+const maxRequest = 100;
 
 function creerPoint() {
     for(var i = 0; i < 10; i++) {
