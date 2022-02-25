@@ -25,22 +25,23 @@ function creerPoint() {
         tabWorker[i].worker.postMessage([cvs.width, cvs.height, i]);
     }
 }
-
-worker.onmessage = function(e) {
-    if (tabWorker[e.data[2]].nbRequest < maxRequest) {
-        console.log(e.data);
-        ctx.fillStyle = "rgb("+tabWorker[e.data[2]].r+","+tabWorker[e.data[2]].g+","+tabWorker[e.data[2]].b+")";
-        ctx.beginPath();
-        ctx.arc(e.data[0],e.data[1], 10, 0, 360);
-        ctx.fill();
-        ctx.stroke();
-        tabWorker[e.data[2]].nbRequest++;
-    }
-    else {
-        tabWorker[e.data[2]].worker.terminate();
-        finishedWorker++;
-        if(finishedWorker == 10) {
-            clearInterval(interval);
+for (var i = 0; i < 10; i++) {
+    tabWorker[i].worker.onmessage = function(e) {
+        if (tabWorker[e.data[2]].nbRequest < maxRequest) {
+            console.log(e.data);
+            ctx.fillStyle = "rgb("+tabWorker[e.data[2]].r+","+tabWorker[e.data[2]].g+","+tabWorker[e.data[2]].b+")";
+            ctx.beginPath();
+            ctx.arc(e.data[0],e.data[1], 10, 0, 360);
+            ctx.fill();
+            ctx.stroke();
+            tabWorker[e.data[2]].nbRequest++;
+        }
+        else {
+            tabWorker[e.data[2]].worker.terminate();
+            finishedWorker++;
+            if(finishedWorker == 10) {
+                clearInterval(interval);
+            }
         }
     }
 }
