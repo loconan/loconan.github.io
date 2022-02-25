@@ -17,7 +17,8 @@ worker.onmessage = function(e) {
     if (nbRequest < maxRequest) {
         console.log(e.data);
         ctx.beginPath();
-        ctx.arc(xGET,yGET, 10, 0, 360);
+        ctx.arc(e.data[0],e.data[1], 10, 0, 360);
+        ctx.fill();
         ctx.stroke();
         nbRequest++;
     }
