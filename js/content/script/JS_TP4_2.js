@@ -3,11 +3,11 @@ let tabWorker = {};
 
 class WorkerPoint {
     constructor() {
-        var worker = new Worker('./content/script/TP4_worker2.js');
-        let nbRequest = 0;
-        let r = (Math.floor(Math.random() * 255));
-        let g = (Math.floor(Math.random() * 255));
-        let b = (Math.floor(Math.random() * 255));
+        this.worker = new Worker('./content/script/TP4_worker2.js');
+        this.nbRequest = 0;
+        this.r = (Math.floor(Math.random() * 255));
+        this.g = (Math.floor(Math.random() * 255));
+        this.b = (Math.floor(Math.random() * 255));
     }
 }
 
