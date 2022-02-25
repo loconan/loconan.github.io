@@ -31,7 +31,7 @@ for (var i = 0; i < 10; i++) {
             console.log(e.data);
             ctx.fillStyle = "rgb("+tabWorker[e.data[2]].r+","+tabWorker[e.data[2]].g+","+tabWorker[e.data[2]].b+")";
             ctx.beginPath();
-            ctx.arc(e.data[0],e.data[1], 10, 0, 360);
+            ctx.arc(e.data[0],e.data[1], Math.floor(Math.random() * 20), 0, 360);
             ctx.fill();
             ctx.stroke();
             tabWorker[e.data[2]].nbRequest++;
